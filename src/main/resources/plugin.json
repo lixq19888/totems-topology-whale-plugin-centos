@@ -1,0 +1,52 @@
+{
+  "vendor": {
+    "vendorId": "centos",
+    "name": "CentOS",
+    "description": "CentOS Systems, Inc."
+  },
+  "version": {
+    "type":"VENDOR_BUNDLE",
+    "id":"centos",
+    "version":"0.1.0"
+  },
+  "controllers": [
+    {
+      "type":"PYTHON",
+      "id":"centos-ssh",
+      "name":"CentOS SSH controller",
+      "description":"SSH controller for CentOS device",
+      "commType":"SSH",
+      "pythonFile":"centos-ssh.py"
+    },
+    {
+      "type":"PYTHON",
+      "id":"centos-telnet",
+      "name":"CentOS Telnet controller",
+      "description":"Telnet controller for CentOS device",
+      "commType":"TELNET",
+      "pythonFile":"centos-telnet.py"
+    }
+  ],
+  "templates": [
+    {
+      "id":"centos",
+      "name":"CentOS",
+      "displayName":"CentOS",
+      "vendorId":"centos",
+      "pluginId":"centos",
+      "controllerIds":[
+        "centos-ssh",
+        "centos-telnet"
+      ]
+    }
+  ],
+  "bundleSymbolicName": "centos",
+  "plugins": [
+    {
+      "pluginId":"centos",
+      "pluginType":"DEVICE",
+      "pluginName":"centos",
+      "description":"centos plugin"
+    }
+  ]
+}
